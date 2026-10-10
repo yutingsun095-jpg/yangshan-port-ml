@@ -1,0 +1,30 @@
+{
+  "matching_rule": "Backward as-of match: snapshot_time_utc <= sample_time_utc; maximum lag 10 minutes.",
+  "port_status_features": [
+    "active_vessel_count",
+    "approach_vessel_count",
+    "approach_mean_sog",
+    "approach_median_sog",
+    "anchorage_present_count",
+    "anchorage_confirmed_waiting_count",
+    "berth_main_present_count",
+    "berth_west_present_count",
+    "berth_main_confirmed_occupied_count",
+    "berth_west_confirmed_occupied_count",
+    "observed_inbound_gate_crossings_30m",
+    "observed_inbound_gate_crossings_60m",
+    "observed_inbound_gate_crossings_120m",
+    "observed_outbound_gate_crossings_30m",
+    "observed_outbound_gate_crossings_60m",
+    "observed_outbound_gate_crossings_120m",
+    "unique_inbound_vessels_60m",
+    "unique_outbound_vessels_60m"
+  ],
+  "excluded_columns": [
+    "snapshot_time_utc",
+    "port_status_lag_minutes",
+    "berth_total_confirmed_occupied_count",
+    "active_ais_max_age_min",
+    "active_ais_median_age_min"
+  ]
+}

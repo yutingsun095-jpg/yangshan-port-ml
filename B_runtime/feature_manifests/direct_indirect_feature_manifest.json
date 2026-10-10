@@ -1,0 +1,66 @@
+{
+  "task": "Direct / Indirect classification at ARR minus 4 hours",
+  "label": {
+    "column": "direct_indirect_binary",
+    "direct": 0,
+    "indirect": 1,
+    "confidence_level": "high only"
+  },
+  "snapshot_policy": {
+    "target_time": "ARR minus 4 hours",
+    "max_ais_lookback_minutes": 30,
+    "strict_rule": "sample_time_utc < arr_time_utc"
+  },
+  "split_policy": {
+    "unit": "port_call_id",
+    "strategy": "stratified 70/15/15",
+    "random_seed": 20260929
+  },
+  "numeric_features": [
+    "lon",
+    "lat",
+    "sog_knots",
+    "cog_deg",
+    "heading_deg",
+    "distance_to_gate_km",
+    "bearing_to_gate_deg",
+    "heading_gate_difference_deg",
+    "gate_side_binary",
+    "sog_mean_10min",
+    "sog_mean_20min",
+    "sog_mean_30min",
+    "sog_min_10min",
+    "sog_min_20min",
+    "sog_min_30min",
+    "sog_max_10min",
+    "sog_max_20min",
+    "sog_max_30min",
+    "sog_std_30min",
+    "sog_change_10min",
+    "sog_change_30min",
+    "sog_acceleration_trend_30min",
+    "cog_change_30min_deg",
+    "cog_stability_30min",
+    "heading_stability_30min",
+    "trajectory_displacement_30min_km",
+    "trajectory_distance_30min_km"
+  ],
+  "categorical_features": [
+    "nav_status"
+  ],
+  "excluded_from_model": [
+    "port_call_id",
+    "arr_event_id",
+    "mmsi",
+    "sample_time_utc",
+    "target_time_utc",
+    "arr_time_utc",
+    "snapshot_lag_minutes",
+    "direct_indirect_binary",
+    "label_confidence",
+    "gate_side",
+    "is_in_external_approach",
+    "trajectory_distance_30min_km_raw",
+    "trajectory_jump_segment_count_30min"
+  ]
+}

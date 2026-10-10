@@ -1,0 +1,18 @@
+{
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "<PROJECT_VENV>/Scripts/python.exe",
+  "platform": "Windows-11-10.0.26100-SP0",
+  "generated_utc": "2026-10-10T05:54:54.979135+00:00",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.5",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.4.1",
+    "lightgbm": "4.7.0",
+    "shap": "0.52.0",
+    "pyarrow": "25.0.1",
+    "joblib": "1.6.0",
+    "geopandas": "not-installed",
+    "pyproj": "3.8.0"
+  }
+}

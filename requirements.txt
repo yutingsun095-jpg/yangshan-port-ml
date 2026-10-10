@@ -1,0 +1,2 @@
+# The B historical-replay display reads precomputed Parquet records only.
+-r A_demo_base/requirements.txt

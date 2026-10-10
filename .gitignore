@@ -1,0 +1,12 @@
+# Frozen input datasets remain in the deliverable archive but are not ordinary Git objects.
+B_runtime/models/
+*.zip
+
+# Local runtime artifacts
+**/__pycache__/
+*.py[cod]
+*.pyc
+.venv/
+.streamlit/secrets.toml
+*.log
+Thumbs.db

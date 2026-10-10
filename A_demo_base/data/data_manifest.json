@@ -1,0 +1,33 @@
+{
+  "source_stage2_bytes": 1780183920,
+  "source_stage2_name": "stage2_yangshan_202401.parquet",
+  "port_call_count": 712,
+  "unique_mmsi_count": 562,
+  "merged_window_count": 691,
+  "ais_columns": [
+    "mmsi",
+    "timestamp_utc",
+    "lon",
+    "lat",
+    "sog_knots",
+    "cog_deg",
+    "nav_status"
+  ],
+  "ais_row_count": 2068585,
+  "ais_time_min_utc": "2023-12-31 23:40:53+00:00",
+  "ais_time_max_utc": "2024-01-31 23:59:27+00:00",
+  "ais_total_bytes": 24443042,
+  "compression_ratio": 0.013730627338775198,
+  "shards": [
+    {
+      "file": "demo_ais_all_port_calls_000.parquet",
+      "bytes": 24443042,
+      "sha256": "2849b2c93540196201505fcd8e3d150ecc7c632b6e6eca1b02d6bd5444cf3d99"
+    }
+  ],
+  "window_policy": {
+    "start": "first linked formal ANC - 30 min; otherwise ARR - 6 h",
+    "end": "DEP + 30 min; else UNB + 90 min; else BER + 6 h; else ARR + 3 h",
+    "semantics": "exactly matches the validated local Demo visit_query_window"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "task": "VAT baseline: AIS + GeoJSON",
+  "ground_truth": {
+    "target": "remaining_time_to_arr_min",
+    "definition": "ARR event_time_utc minus actual sample_time_utc, in minutes",
+    "confidence_level": "high only"
+  },
+  "snapshot_policy": {
+    "main_window_hours": 6,
+    "snapshot_interval_minutes": 10,
+    "max_lookback_minutes": 30,
+    "strict_rule": "sample_time_utc < arr_time_utc"
+  },
+  "trajectory_qc": {
+    "model_feature": "trajectory_distance_30min_km",
+    "rule": "Exclude AIS adjacent segments whose implied speed exceeds 40 knots when summing trajectory distance.",
+    "excluded_audit_columns": [
+      "trajectory_distance_30min_km_raw",
+      "trajectory_jump_segment_count_30min"
+    ]
+  },
+  "split_policy": {
+    "unit": "arr_event_id",
+    "random_seed": 20260917,
+    "events": {
+      "train": 454,
+      "validation": 97,
+      "test": 97
+    },
+    "rule": "All snapshots from the same ARR event must belong to exactly one dataset split."
+  },
+  "numeric_features": [
+    "lon",
+    "lat",
+    "sog_knots",
+    "cog_deg",
+    "heading_deg",
+    "distance_to_gate_km",
+    "bearing_to_gate_deg",
+    "heading_gate_difference_deg",
+    "gate_side_binary",
+    "is_in_external_approach",
+    "sog_mean_10min",
+    "sog_mean_20min",
+    "sog_mean_30min",
+    "sog_min_10min",
+    "sog_min_20min",
+    "sog_min_30min",
+    "sog_max_10min",
+    "sog_max_20min",
+    "sog_max_30min",
+    "sog_std_30min",
+    "sog_change_10min",
+    "sog_change_30min",
+    "sog_acceleration_trend_30min",
+    "cog_change_30min_deg",
+    "cog_stability_30min",
+    "heading_stability_30min",
+    "trajectory_displacement_30min_km",
+    "trajectory_distance_30min_km"
+  ],
+  "categorical_features": [
+    "nav_status"
+  ],
+  "excluded_from_model": [
+    "arr_event_id",
+    "mmsi",
+    "sample_time_utc",
+    "arr_time_utc",
+    "target_snapshot_time_utc",
+    "planned_lead_minutes",
+    "snapshot_lag_minutes",
+    "remaining_time_to_arr_min",
+    "trajectory_distance_30min_km_raw",
+    "trajectory_jump_segment_count_30min"
+  ]
+}

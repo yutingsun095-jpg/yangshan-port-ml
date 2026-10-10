@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "A+B historical replay input for C",
+  "type": "object",
+  "required": ["interface_version", "record_type", "port_call_id", "mmsi", "current_replay_time_utc", "current_a_status", "observed_formal_events", "vat_prediction", "direct_indirect_prediction", "arr_to_ber_prediction"],
+  "properties": {
+    "interface_version": {"const": "A_B_C_replay_interface_v1"},
+    "record_type": {"const": "A_B_historical_replay_input_for_C"},
+    "port_call_id": {"type": "string"},
+    "mmsi": {"type": "string"},
+    "current_replay_time_utc": {"type": "string", "format": "date-time"},
+    "current_a_status": {"type": "object"},
+    "observed_formal_events": {"type": "array"},
+    "vat_prediction": {"type": "object"},
+    "direct_indirect_prediction": {"type": "object"},
+    "arr_to_ber_prediction": {"type": "object"},
+    "historical_truth": {"type": "object"}
+  }
+}

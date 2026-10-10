@@ -1,0 +1,4 @@
+﻿task,rows,model_feature_count,raw_pipeline_split_mismatch_vs_manifest,missing_manifest_split,output
+VAT,22964,29,0,0,vat_final_model_ready.parquet
+DIRECT_INDIRECT,262,46,97,0,direct_indirect_final_model_ready.parquet
+ARR_TO_BER,326,33,0,0,arr_to_ber_final_model_ready.parquet

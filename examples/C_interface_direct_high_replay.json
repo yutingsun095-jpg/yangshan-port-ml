@@ -1,0 +1,84 @@
+{
+  "interface_version": "A_B_C_replay_interface_v1",
+  "record_type": "A_B_historical_replay_input_for_C",
+  "replay_mode_note": "historical replay prediction; not real-time production output",
+  "port_call_id": "PC_202401_356407000_20240101T131425",
+  "mmsi": "356407000",
+  "current_replay_time_utc": "2024-01-01T13:15:24+00:00",
+  "current_a_status": {
+    "source_type": "observed_fact",
+    "value": "到港后进港／待靠泊"
+  },
+  "observed_formal_events": [
+    {
+      "source_type": "observed_fact",
+      "event_id": "ARR_202401_356407000_20240101T131425",
+      "event_type": "ARR",
+      "event_time_utc": "2024-01-01T13:14:25.064000+00:00",
+      "confidence_level": "high",
+      "qc_flag": "ok"
+    }
+  ],
+  "vat_prediction": {
+    "source_type": "model_prediction",
+    "task": "VAT",
+    "model_version": "vat_stacking_v1",
+    "prediction": 16.236110182729178,
+    "unit": "min_to_arrival_gate",
+    "prediction_time_utc": "2024-01-01T13:04:23+00:00",
+    "data_available_until_utc": "2024-01-01T13:04:23+00:00",
+    "lead_time_min": 11.016667,
+    "lead_time_definition": "elapsed_minutes_from_prediction_generation_to_current_replay",
+    "confidence": null,
+    "uncertainty": null,
+    "qc_flag": "ok",
+    "a_input_version": "yangshan_2024-01_fixed_inputs",
+    "a_input_sha256": "a232af40c1aebc9cb22a5669b92dea3e1518e70cc0ac63faf2a0775d29261560",
+    "model_sha256": "f1b89fd5017a74d33f8d7594155c71654bcc9c4a7b1cc35125700f727b2708a4",
+    "prediction_lead_time_bin": "0-1h"
+  },
+  "direct_indirect_prediction": {
+    "source_type": "model_prediction",
+    "task": "DIRECT_INDIRECT",
+    "model_version": "direct_indirect_rf_v1",
+    "prediction": 0.0,
+    "unit": "probability_indirect",
+    "prediction_time_utc": "2024-01-01T09:13:42+00:00",
+    "data_available_until_utc": "2024-01-01T09:13:42+00:00",
+    "lead_time_min": 241.7,
+    "lead_time_definition": "elapsed_minutes_from_prediction_generation_to_current_replay",
+    "confidence": 1.0,
+    "uncertainty": "uncalibrated_probability",
+    "qc_flag": "ok_uncalibrated",
+    "a_input_version": "yangshan_2024-01_fixed_inputs",
+    "a_input_sha256": "a232af40c1aebc9cb22a5669b92dea3e1518e70cc0ac63faf2a0775d29261560",
+    "model_sha256": "2f6b6fb820b220a97d3f63205560104cb539fd08f08b1139c451b2f399ff21fc",
+    "predicted_class": "Direct",
+    "decision_threshold": 0.5,
+    "probability_calibration": "uncalibrated",
+    "scope_note": "historical_yangshan_replay_with_strong_spatial_features"
+  },
+  "arr_to_ber_prediction": {
+    "source_type": "model_prediction",
+    "task": "ARR_TO_BER",
+    "model_version": "arr_to_ber_rf_log1p_no_port_status_v1",
+    "prediction": 113.439157370128,
+    "unit": "min_arrival_gate_to_first_stable_ber",
+    "prediction_time_utc": "2024-01-01T13:14:24+00:00",
+    "data_available_until_utc": "2024-01-01T13:14:24+00:00",
+    "lead_time_min": 1.0,
+    "lead_time_definition": "elapsed_minutes_from_prediction_generation_to_current_replay",
+    "confidence": null,
+    "uncertainty": "long_tail_uncertainty_not_quantified",
+    "qc_flag": "ok",
+    "a_input_version": "yangshan_2024-01_fixed_inputs",
+    "a_input_sha256": "a232af40c1aebc9cb22a5669b92dea3e1518e70cc0ac63faf2a0775d29261560",
+    "model_sha256": "8bae7b27d062585fa9cd7ff3b55b0debc558747a317eb9d88768731fff6acb73",
+    "feature_scope": "AIS_geo_dynamic_only_no_port_status",
+    "uncertainty_note": "long_tail_uncertainty_not_quantified"
+  },
+  "historical_truth": {
+    "source_type": "unavailable/not_applicable",
+    "note": "Future historical truth is intentionally omitted from the C input contract."
+  }
+}
